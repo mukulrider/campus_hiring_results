@@ -1,0 +1,19 @@
+<html>
+
+{% extends "accounts/auth_base.html" %}
+
+
+
+{% load crispy_forms_tags %}
+
+
+{% block form %}
+  {% crispy form %}
+ <div class="form-message" align="center">
+    <a href="#" style="color : #61605B;"><span class="glyphicon glyphicon-question-sign" title="Your date of birth in the format DD-MM-YYYY"></span></a> Forgot password</li>
+  </div>
+
+
+{% endblock form %}
+</body>
+</html>

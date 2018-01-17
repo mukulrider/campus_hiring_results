@@ -1,0 +1,223 @@
+p {
+	margin: 0;
+}
+.legend {
+	font-family: 'Raleway', sans-serif;
+	fill: #333333;
+}			
+.tooltip {
+	fill: #333333;
+}
+
+.dashboard-main{
+	height : 100%;
+	width: 100%;
+    float: left;
+}
+.dashboard-header{
+	height : 15%;
+	width: 100%;
+    float: left;
+	position: relative;
+}
+#dashboard-body{
+	height : 100%;
+	width: 100%;
+	/*margin-top:15%;*/
+    float: left;
+	position: relative;
+}
+
+#score-card-text{
+    font-size: 21px;
+    letter-spacing: 8;
+    color: #00807A;
+    font-weight: bold;
+}
+
+.user-details-panel{
+	height : 100%;
+	width: 25%;
+    float: left;
+	background-color : #E9F6F5;
+}
+.d3-chart-panel{
+	height : 100%;
+	width: 50%;
+    float: left;
+}
+
+#user-details{
+	height : 15%;
+	left : 5%;
+	width : 100%;
+	float : left;
+	position : relative;
+}
+
+#profile-icon{
+	height : 100%;
+	width : 25%;
+	top : 35%;	
+    float: left;
+	position: relative;
+	background-repeat: no-repeat;
+}
+#user-name{
+	height : 100%;
+	width: 70%;
+	top : 35%;
+    float: left;
+	position: relative;
+	color : #BC2326;
+}
+
+#reg-details{
+	height : 12%;
+	left : 7%;
+	top : 5%;
+	width : 93%;
+	float : left;
+	position : relative;
+}
+#reg-icon{
+	height : 100%;
+	width: 15%;
+    float: left;
+	position: relative;
+	background-repeat: no-repeat;
+}
+#reg-no{
+	height : 100%;
+	width: 85%;
+    float: left;
+	position: relative;
+}
+
+#college-details{
+	height : 12%;
+	left : 7%;
+	top : 5%;
+	width : 93%;
+	float : left;
+	position : relative;
+}
+#college-icon{
+	height : 100%;
+	width: 15%;
+    float: left;
+	position: relative;
+	background-repeat: no-repeat;
+}
+#college-name{
+	height : 100%;
+	width: 85%;
+    float: left;
+	position: relative;
+}
+
+#email-details{
+	height : 12%;
+	left : 7%;
+	top : 5%;
+	width : 93%;
+	float : left;
+	position : relative;
+}
+#email-icon{
+	height : 100%;
+	width: 15%;
+    float: left;
+	position: relative;
+	background-repeat: no-repeat;
+}
+#email-id{
+	height : 100%;
+	width: 85%;
+    float: left;
+	position: relative;
+}
+
+#test-date-details{
+	height : 12%;
+	left : 7%;
+	top : 5%;
+	width : 93%;
+	float : left;
+	position : relative;
+}
+#test-date-icon{
+	height : 100%;
+	width: 15%;
+    float: left;
+	position: relative;
+	background-repeat: no-repeat;
+}
+#test-date-text{
+	height : 100%;
+	width: 85%;
+    float: left;
+	position: relative;
+}
+
+#valid-date-details{
+	height : 12%;
+	left : 7%;
+	top : 5%;
+	width : 93%;
+	float : left;
+	position : relative;
+}
+#valid-date-icon{
+	height : 100%;
+	width: 15%;
+    float: left;
+	position: relative;
+	background-repeat: no-repeat;
+}
+#valid-date-text{
+	height : 100%;
+	width: 85%;
+    float: left;
+	position: relative;
+}
+.aptitude-performance-panel{
+	height : 100%;
+	width: 25%;
+    float: right;
+}
+#percentage-details{
+	height : 45%;
+	top : 5%;
+	float : left;
+	position : relative;
+}
+#question-count-details-panel{
+	height : 45%;
+	top : 5%;
+	float : left;
+	position : relative;
+}
+.question-count-details{
+	height : 25%;
+	width: 100%;
+	top : 5%;
+    float: left;
+	position : relative;
+}
+.question-count{
+	height : 100%;
+	width: 15%;
+    float: left;
+	font-size : 30px;
+	color : #00807A;
+	line-height : 100%;
+	position : relative;
+}
+.question-text{
+	height : 100%;
+	width: 80%;
+	color : #61605B;
+    float: left;
+	position : relative;
+}

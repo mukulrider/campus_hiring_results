@@ -1,0 +1,7 @@
+{% extends "candidates/header.html" %}
+
+{% block content %}
+{% for data in object_list %}
+		<h5>{{ data.registration_no}}<a href="/candidate/{{data.id}}">  {{ data.name }}</a> {{data.email}}</h5> 
+	{% endfor %}
+{% endblock %}

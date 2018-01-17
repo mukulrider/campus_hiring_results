@@ -1,0 +1,30 @@
+.user-details-block {
+	background-color : #E9F6F5; 
+	min-height:300px; 
+	padding-left : 30px;
+	padding-right: 30px;
+}
+
+.user-name {
+	height : 100px;
+}
+.user-name-text {
+	font-size:20px;  
+	color : #BC2326; 
+}
+
+.list-group {
+	border-bottom: solid #fff;
+	border-width:1px;
+}
+.list-group-info {
+	color: #00928A;
+    font-weight: bold;
+    word-wrap: break-word; 
+}
+
+.user-attribute-value {
+	color:#00928A;
+	font-weight: bold;
+}
+

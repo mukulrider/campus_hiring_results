@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load thumbnail %}
+
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script type="text/javascript">
+   $('#load').click(function(){
+
+            html2canvas($('#testdiv'), {
+                onrendered: function (canvas) {
+                    var img = canvas.toDataURL("image/png")
+                    window.open(img);
+                }
+            });
+
+    });  
+</script>
+
+{% block title %}{{ block.super }}Profile{% endblock %}
+
+{% block navbar-left %}
+{% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+{% block navbar-right %}
+{% if not user.is_authenticated %}
+<a class="btn btn-default" href="{% url 'accounts:login' %}" role="button">Log in</a>
+{% else %}
+{{ block.super }}
+{% endif %}
+{% endblock %}
+{% block container %}
+
+    <div class="container-fluid" id="scorecard">
+		<div class="col-sm-12">
+			<div class="row">
+				<div class="col-sm-3" id="sidebar-wrapper" style="background-color : #E9F6F5;" >
+					<ul class="sidebar-nav">
+					<div class="row list-group">
+						<div class="col-sm-4"  style="float:left; height:60px; margin-top:10px; overflow:hidden" align="center">
+						<img src="{% static 'site/img/profile_user.png' %}">
+						</div>
+						<div class="col-sm-8" id="name" align="left" style ="font-size:20px; color:#BC2326; height:60px; margin-top:10px; overflow:hidden" >
+						</div>
+					</div>
+					<div class="row list-group" style="">
+						<div class="col-sm-4" style="float:left; height:60px; margin-top:10px;" align="center">
+						<img src="{% static 'site/img/reg_no.png' %}">
+						</div>
+						<div class="col-sm-8" align="left" style="height:60px;">
+						Reg No
+						<br><p class="list-group-info" id="registration_no"></br>
+						</div>
+					</div>
+					<div class="row list-group" >
+						<div class="col-sm-4" style="float:left; height:60px; margin-top:10px;" align="center">
+						<img src="{% static 'site/img/college.png' %}">
+						</div>
+						<div class="col-sm-8" align="left" style="margin-top:10px;" >
+						College
+						<br><p class="list-group-info" id="college" ></p></br>
+						</div>
+					</div>
+					<div class="row list-group" >
+						<div class="col-sm-4"  style="float:left; height:60px; margin-top:10px;overflow:hidden" align="center">
+						<img src="{% static 'site/img/email.png' %}">
+						</div>
+						<div class="col-sm-8" align="left" style="overflow:hidden">
+						Email
+						<br><p class="list-group-info" id="email"></br>
+						</div>
+					</div>
+					<div class="row list-group" >
+						<div class="col-sm-4" style="float:left; height:60px; margin-top:10px; overflow:hidden" align="center">
+					<img src="{% static 'site/img/test_date.png' %}">
+
+						</div>
+						<div class="col-sm-8" align="left" style="height:60px; margin-top:10px; overflow:hidden" >
+						Test Date
+						<br><p class="list-group-info" id="test_date"></br>
+
+						</div>
+					</div>
+
+					<div class="row list-group" >
+						<div class="col-sm-4" style="float:left; height:60px; margin-top:10px; overflow:hidden" align="center">
+					<img src="{% static 'site/img/valid_till.png' %}">
+
+						</div>
+						<div class="col-sm-8" align="left" style="height:60px; margin-top:10px; overflow:hidden">
+						Valid Till
+						<br><p class="list-group-info" id="valid_till"></br>
+
+						</div>
+					</div>
+</ul>
+
+				</div>
+				<div class="col-sm-6">
+					<div class="row">	
+						<div class="col-sm-12" align="center" style="    font-size: 30px; letter-spacing: 8; color: #00807A; font-weight: bold;">
+							Score Card
+						</div>
+
+						<div class="radarChart" align="center">
+							
+						</div>
+					</div>
+
+
+					<div class="row" style=" position:relative">
+						<div class="col-sm-12" align="center" >
+						<div class="row">
+							<div class="col-sm-3 glyphicon glyphicon-stop" style="color :#EDC951; margin-left:15%;">
+							<br><p style= "color:#61605B;">Candidate</p></br></div>
+							<div class="col-sm-3 glyphicon glyphicon-stop" style="color :#CC333F;">
+							<br><p style= "color:#61605B;"> Average</p></br></div>
+							<div class="col-sm-3 glyphicon glyphicon-stop" style= "color:#00a0b0;" >
+							<br><p style= "color:#61605B;"> Highest</p></br></div>
+						</div>
+						</div>
+						<div class="col-sm-12 hidden-print" id="wiki-hyperlink" align="center" style= "color:#61605B; position:relative; margin-top:5%;">
+							<I>Confused as to how to read this chart, explore <a href="https://en.wikipedia.org/wiki/Radar_chart">here</a></I>
+						</div>	
+					</div>
+					
+					<div class="row" style="position:relative; margin-left:40%; margin-top:5%;">
+							<input type='button' class="col-md-4 hidden-print btn btn-primary btn-sm" id='btn' data-toggle="modal" data-target="#myModal" data-keyboard="true" style="background-color:#800000; color:#FFF;" value='Print Scorecard' align="center" >
+							<!-- Modal -->
+							  <div class="modal fade hidden-print" id="myModal" role="dialog">
+								<div class="modal-dialog">
+								
+								  <!-- Modal content-->
+								  <div class="modal-content" style="background-color: #E9F6F5;">
+									<div class="modal-header" style="background-color: #00807A;">
+									  <button type="button" class="close" style="color:#FFF;" data-dismiss="modal">&times;</button>
+									  <h4 class="modal-title" style="color:#FFF;">Print Guidelines...</h4>
+									</div>
+									<div class="modal-body">
+									  <p>For best results, it is recommended that you take a print in landscape mode, using Google Chrome</p>
+									</div>
+									<div class="modal-footer">
+									  <button type="button" class="btn btn-default" style="background-color:#800000; color: #FFF; border-color: #800000" data-dismiss="modal" onclick="printDiv();">OK</button>
+									</div>
+								  </div>
+								  
+								</div>
+							  </div>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+
+					<div class="row" style="height:30px">
+					</div>
+
+					<div class="row" style="margin-top:1%">						
+						<div class="col-sm-12" id="overall" style="font-size:55px; color:#00807A;" align="center" >
+						</div>
+						<div class="col-sm-12" style="font-size:14px; color : #61605B;" align="center">
+						Overall<br>Percentile</br>
+						</div>
+					</div>
+
+					<div class="row" style="height:20px">
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12" id="personalis" style="font-size:24px; color:#800000;" align="center">
+						</div>
+						<div class="col-sm-12" style="font-size:14px; color : #61605B;" align="center">
+						<I>Personalis</I>
+						</div>						
+					</div>
+
+
+					<div class="row" style="height:30px">
+					</div>
+
+					<div class="row" style="height:150px;">
+						
+							<div class="col-sm-12">
+
+								<div class="row" style="height:50px;">
+									<div class="col-sm-3" style="color :#61605B; line-height:50px; margin-left:25%;" >
+									Aptus
+									</div>
+									
+									<div class="col-sm-3" id="aptus"  style="font-size:35px; color:#00807A; margin-left:5%"  >
+									</div>
+								</div>
+
+								<div class="row" style="height:50px;">
+									<div class="col-sm-3" style="color :#61605B; line-height:50px; margin-left:25%;  " >
+									Latus
+									</div>									
+									<div class="col-sm-3" id="latus"  style="font-size:35px; color:#00807A; margin-left:5% " >
+									</div>
+								</div>
+								
+								<div class="row" style="height:50px;">
+									<div class="col-sm-3" style="color :#61605B;line-height:50px; margin-left:25%;" >
+									Tekhne
+									</div>
+									<div class="col-sm-3" id="tekhne"  style="font-size:35px; color:#00807A; margin-left:5%" >
+									</div>
+								</div>
+
+							</div>
+
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+</div>
+<script src="{% static 'site/js/dashboard.js' %}"></script>
+<script type="text/javascript">
+
+/*
+	function createchart() {	console.log("Inside createChart function:");
+                                var html = document.getElementById('scorecard').innerHTML;
+                                                
+                                var imgsrc = 'data:image/svg+xml;base64,'+ btoa(html);
+                               
+                                var canvas = document.querySelector("canvas"),
+                                  context = canvas.getContext("2d");
+
+                  var image = new Image;
+                  image.src = imgsrc;
+                  image.onload = function() {
+                                  context.drawImage(image, 0, 0);
+
+                                  var canvasdata = canvas.toDataURL("image/png");
+                                  var a = document.createElement("a");
+                                  a.download = "sample.png";
+                                  a.href = canvasdata;
+                                  a.click();
+                  };
+                }
+
+*/
+</script>
+{% endblock container %}
+
+
+

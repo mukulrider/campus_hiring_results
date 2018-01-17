@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block title %}{{ block.super }}Home{% endblock %}
+{% block navbar-left %}
+{% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+{% block navbar-right %}
+{% if not user.is_authenticated %}
+<li style="color:#fff; padding-left:25px; padding-right:25px;"><I>Check your muAPT score</I></li>
+
+<li><a href="{% url 'accounts:login' %}" ><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+{% else %}
+{{ block.super }}
+{% endif %}
+{% endblock %}
+{% block container %}
+
+<div class="banner-main">
+
+<div class="banner-top">
+<h1 style="color:#666"> ARE YOU READY FOR <br>A NEW COMPETITIVE BENCHMARK?</h1>
+</div>
+<span></span>
+<div class="banner-bottom">
+<div class="banner-slide" style="margin-top:60px">
+<div id="top" class="callbacks_container">
+<img src="{% static 'muapt_microsite_files/slide-1.png' %}" alt="">
+</div>
+<div class="clearfix"> </div>
+</div>
+</div>
+</div>
+</div>	
+<!-- script-for-menu -->
+<!--End-slider-script-->		
+<!--end-banner-->
+<!--start-idea-->
+<div style="padding-top:10px;  ">
+   <div class="container">
+      <div class="idea-main">
+         <div class="idea-top" style="background-color:#eee; ">
+            <div class="col-md-5 idea-left id-left" style="float:left;  color:#FFF; width:350px; height:240px;margin-right:45px; padding-left:20px;">
+               <div class="wistia_video_foam_dummy" data-source-container-id="" style="border: 0px; display: block; height: 0px; margin: 0px; padding: 0px; position: static; visibility: hidden; width: auto;"></div>
+               <iframe src="{% static 'muapt_microsite_files/lybts4fohu.html' %}" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" webkitallowfullscreen="webkitallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" width="315" height="177" style="width: 315px; height: 177px;"></iframe><script src="{% static 'muapt_microsite_files/E-v1.js' %}"></script>
+            </div>
+            <div class="col-md-5 idea-left id-left"></div>
+            <div class="col-md-7 idea-right id-right">
+               <h3>The WHY and WHAT of muApt</h3>
+               <p>At Mu Sigma we’ve always had a unique recruitment process. We believe innovation is the key to growth and success. This thought process led us to create an innovative nationwide evaluation called <strong>muApt - Mu Sigma Aptitude and Personality Test</strong>. </p>
+            </div>
+            <div class="clearfix"></div>
+         </div>
+         <div class="idea-top" style="padding:25px; margin-top:0px; ">
+            <div class="col-md-7 idea-right id-one-left">
+               <p style="padding-top:0px; margin-top:0px;"><strong>muApt is not just about assessing your academic ability or aptitude but also evaluating the whole personality. </strong></p>
+               <p>We believe that the mix of left and right brain is needed to become a successful Decision Scientist and muApt will help us find that out about you.</p>
+               <p>                   
+                  So, take your first step to join the world’s Decision Sciences leader, by taking on India’s newest challenge.  Discover the new competitive benchmark! 
+               </p>
+               <p>
+                  muApt is going to put your analytical, logical and creative sides to the test. Are you ready for the brain jog, or shall we say, the brain sprint?
+               </p>
+               <span class="i-btn" style="float:left">
+               <a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;hyperlink&#39;, &#39;click&#39;, &#39;muApt-test-section&#39;]);" href="http://www.portal.mu-sigma.com/muapt/muapt-sections.html">TEST SECTIONS</a>
+               </span>
+               <span class="i-btn" style="float:left">
+               <a onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;hyperlink&#39;, &#39;click&#39;, &#39;muApt-sample-Q-1stp&#39;]);" href="http://www.portal.mu-sigma.com/muapt/register.html">TRY THE SAMPLE QUESTIONS</a>
+               </span>
+               <div class="clearfix"></div>
+            </div>
+            <div class="col-md-5 idea-left id-one-right" style=" margin-left:0px; padding-left:0px; padding-top:20px;">
+               <img src="{% static 'muapt_microsite_files/muapt1.png' %}" alt="" width="500" height="345">
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--end-idea-->
+<!--Slider-Starts-Here-->
+  
+       {% endblock container %}
+   
+
+    <!-- Site footer -->
+    {% block footer %}
+      <!--start-footer-->
+    
+<div class="footer">
+      <div class="footer-main" style="height:8%">
+            <div class="contact" style="background-color:#800000; border-top:0px">
+            <div class="col-md-8 contact-left">
+               <p></p><h3 style="color:#FFFFFF">We promise you it will be exciting and fun!</h3><p></p>
+            </div>
+            <div class="col-md-4 contact-right">
+               <h3 style="color:#FFF">CONTACT</h3>
+               <p style="color:#FFF; font-size:14px">For any queries please write to </p>
+               <p style="color:#FFF; font-size:14px"><a style="color:#FFF; font-size:14px" href="http://www.portal.mu-sigma.com/muapt/muApt@mu-sigma.com">muApt@mu-sigma.com</a></p>
+            </div>
+            <div class="clearfix"></div>
+         </div>
+      <div class="footer-bottom">
+         <div class="col-md-4 footer-left">
+            <ul>
+               <li><a href="https://www.facebook.com/musigmaofficial" target="_new"><span class="fb"> </span></a></li>
+               <li><a href="https://twitter.com/MuSigmaInc" target="_new"><span class="twit"> </span></a></li>
+               <li><a href="http://www.portal.mu-sigma.com/muapt/index.html#"><span class="sky"> </span></a></li>
+            </ul>
+         </div>
+         <div class="col-md-4 footer-middle">
+            <p><a href="http://www.mu-sigma.com/">www.mu-sigma.com</a></p>
+         </div>
+         <div class="col-md-4 footer-right">
+            <p><a href="http://www.portal.mu-sigma.com/muapt/index.html#home" class="scroll">TO THE TOP</a></p>
+         </div>
+   </div>
+</div>
+</div>
+   <!--end-footer-->
+
+    {% endblock footer %}

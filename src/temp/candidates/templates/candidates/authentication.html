@@ -1,0 +1,52 @@
+<html>
+
+<head>
+{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'candidates/css/login.css' %}" type='text/css'/>
+	<link rel="stylesheet" href="{% static 'candidates/css/dashboard.css' %}" type='text/css'/>
+</head>
+
+<body>
+<div class ="dashboard-main">
+	<div class ="dashboard-header">
+		<div id="muapt-logo" >
+
+		</div>
+		<div id="score-card-text" >
+		 SCORE CARD
+		 </div>
+		 <div id="musigma-logo" >
+			
+		</div>
+	</div>
+
+	<div id="dashboard-body" style="background-color:#D5EDEC">
+
+		<div id ="musigma-belief"> 
+			<div id ="musigma-belief-logo"> </div>
+			<div id ="musigma-belief-text"> Mu Sigma Aptitude and Personality Test </div>
+		</div>
+		
+		<div id="login-tab">
+			<div id="login-header">
+				<img src="{% static 'candidates/images/login_user.PNG' %}">
+				<a style="color:#007F7A;font-family:Helvetica sans-serif;font-size: 20px ";> LOGIN TO YOUR SCORE SCARD</a>
+			</div>
+			<div id="form-tab">
+				<form class="form" name="authentication" method="post" action="/login/">
+					{% csrf_token %}
+						<input class="form-fields" type="text" required name="username" value="Username" onBlur="if(this.value=='')this.value='Username'" onFocus="if(this.value=='Username')this.value='' ">
+						<input class="form-fields" type="password" required name="password" placeholder="Password" onBlur="if(this.placeholder=='')this.value='Password'" onFocus="if(this.placeholder=='Password')this.placeholder='' ">
+						<p id="forgot-password-field"><a href="#">Forgot Password?</a></p>
+						<input style="float:right; right:10%; background-color:#00AEED; color:#FFF;" type="submit" value="Login">
+					</fieldset>
+					</form>
+				</div>
+		</div>
+	</div>
+	<div id="dashboard-footer">
+		© Copyright and all rights reserved
+	</div>
+</div>
+</body>
+</html>

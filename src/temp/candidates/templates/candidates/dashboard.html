@@ -1,0 +1,132 @@
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'candidates/css/normalize.css' %}" type='text/css'/>
+	<link rel="stylesheet" href="{% static 'candidates/css/dashboard.css' %}" type='text/css'/>
+	<script src="{% static 'candidates/js/d3/d3.min.js' %}"></script>
+	<script src="{% static 'candidates/js/jquery-3.0.0.min.js' %}"></script>
+	
+<!--	<script src="d3.min.js"></script>
+	<script src="dashboard.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  -->
+</head>
+
+<body class="container-fluid" style="min-height:95%">
+{% for c in object_list %}
+<div class ="dashboard-main">
+	<div class ="dashboard-header">
+		<div id="muapt-logo" >
+
+		</div>
+		<div id="score-card-text" >
+		 SCORE CARD
+		 </div>
+		 <div id="musigma-logo" >
+			
+		</div>
+	</div>
+
+	<div id="dashboard-body">
+		<div class="user-details-panel">
+			<div id ="user-details">
+				<div id ="profile-icon">
+					
+				</div>
+				<div id ="user-name">
+					{{ c.name }}
+					<br>242/300  XTD</br>
+				</div>
+			</div>
+			<div id ="reg-details">
+				<div id ="reg-icon">
+
+				</div>
+				<div id ="reg-no">
+						Reg No
+						<br><p style="color:#00928A;">{{ c.registration_no }}</br>
+				</div>
+			</div>
+			<div id ="college-details">
+				<div id ="college-icon">
+
+				</div>
+				<div id ="college-name">
+						College/ University
+						<br><p style="color:#00928A;">{{ c.college }}</p></br>
+				</div>
+			</div>
+			<div id ="email-details">
+				<div id ="email-icon">
+
+				</div>
+				<div id ="email-id">
+						EMail
+						<br><p style="color:#00928A;">{{ c.email }}</br>
+				</div>
+			</div>
+			<div id ="test-date-details">
+				<div id ="test-date-icon">
+
+				</div>
+				<div id ="test-date-text">
+						Test Date
+						<br><p style="color:#00928A;">{{ c.test_date }}</br>
+				</div>
+			</div>
+			<div id ="valid-date-details">
+				<div id ="valid-date-icon">
+
+				</div>
+				<div id ="valid-date-text">
+						Valid Till
+						<br><p style="color:#00928A;">{{ c.valid_till }}</br>
+				</div>
+			</div>
+		</div>
+		<div class="d3-chart-panel">
+		
+			<div class="radarChart">
+				<script src="{% static 'candidates/js/dashboard.js' %}"></script>
+			</div>
+			
+		</div>
+		<div class="aptitude-performance-panel">
+			<div id ="percentage-details">
+					<p id= "hover-value" style="font-size:50px; color:#00807A;"> {{ c.aptus_cand }}% </p>
+					<p style="font-size:25px; color:#61605B;"> Aptus </p>
+					<p style="font-size:18px; color:#BB2224;"> Onclick Selected Value </p>
+					
+				</div>
+			<div id="question-count-details-panel">
+				<div class="question-count-details">
+					<div class="question-count" id="total-questions"><p>{{ c.total_questions }}</p></div>
+					<div class="question-text">Total<br>Questions</br></div>
+				</div>
+				<div class="question-count-details">
+					<div class="question-count" id="correctly-answered">{{ c.correctly_answered }}</div>
+					<div class="question-text">Correctly<br>Answered</br></div>
+				</div>
+				<div class="question-count-details">
+					<div class="question-count" id="wrongly-answered">{{ c.incorrectly_answered}}</div>
+					<div class="question-text">Wrongly<br>Answered</br></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="dashboard-footer">
+		{% block content %}
+		{% endblock %}
+	</div>
+</div>
+{% endfor %}
+
+<!-- <div>This data came from email : {{ request.user.email }} and {{ request.user.username }} {{ object_list.name|first }}</div> -->
+
+</body>
+
+</html>

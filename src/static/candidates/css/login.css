@@ -1,0 +1,118 @@
+
+a { text-decoration: none; }
+h1 { font-size: 1em; }
+h1, p {
+margin-bottom: 10px;
+}
+strong {
+font-weight: bold;
+}
+.uppercase { text-transform: uppercase; }
+
+/* ---------- LOGIN ---------- */
+#musigma-belief{
+	height : 100%;
+	width: 50%;
+    float: left;
+	position: relative;
+}
+#musigma-belief-logo{
+	height : 60%;
+	width: 100%;
+    float: left;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: 40% 30%;
+}
+#musigma-belief-text{
+	height : 40%;
+	width: 100%;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 28px;
+	color: #007F7A;
+    float: left;
+	text-align:center;
+}
+
+#login-tab {
+    height: 50%;
+    width: 25%;
+    left: 10%;
+    top: 15%;
+    float: left;
+    position: relative;
+	background-color:#FFF;
+}
+#login-header {
+	height: 8%;
+    width: 90%;
+    top: 15%;
+	left: 10%;
+    float: left;
+    position: relative;
+}
+#form-tab {
+	height: 70%;
+    width: 95%;
+    top: 17%;
+	left: 5%;
+    float: left;
+    position: relative;
+}
+.form{
+	height: 100%;
+    width: 90%;
+    top: 10%;
+	left: 5%;
+    float: left;
+    position: relative;
+}
+.form-fields {
+    height: 15%;
+    width: 100%;
+    position: relative;
+    display: block;
+	margin-bottom: 25px;
+}
+#forgot-password-field {
+	height: 15%;
+    top: 50%;
+	left: 5%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #007F7A;
+    float: left;
+	text-align:center;
+}
+form fieldset input[type="text"], input[type="password"] {
+background-color: #e5e5e5;
+border: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+color: #5a5656;
+font-family:Arial, Helvetica, sans-serif;
+font-size: 14px;
+height: 50px;
+outline: none;
+padding: 0px 10px;
+-webkit-appearance:none;
+}
+form fieldset input[type="submit"] {
+background-color: #008dde;
+border: none;
+border-radius: 3px;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+color: #f4f4f4;
+cursor: pointer;
+font-family: Arial, Helvetica, sans-serif;
+height: 50px;
+text-transform: uppercase;
+width: 300px;
+-webkit-appearance:none;
+}
+form fieldset a {
+color: #5a5656;
+font-size: 10px;
+}

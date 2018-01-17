@@ -1,0 +1,6 @@
+{% load staticfiles %}
+
+<li {% if active_link == "home" %}class="active"{% endif %}><a href="{% url 'home' %}"><Strong>HOME</a></Strong><span><img src="{% static 'muapt_microsite_files/clk.png' %}" alt=""></span></li> 
+<li><a href="http://www.portal.mu-sigma.com/muapt/muapt-sections.html"><Strong>muApt SECTIONS</Strong></a><span><img src="{% static 'muapt_microsite_files/clk.png' %}" alt=""></span></li> 
+<li><a href="http://www.portal.mu-sigma.com/muapt/register.html"><Strong>SAMPLE QUESTIONS</Strong></a><span><img src="{% static 'muapt_microsite_files/clk.png' %}" alt=""></span></li> 
+<li><a href="http://www.portal.mu-sigma.com/muapt/faq.html"><Strong>FAQs</Strong></a></li>
